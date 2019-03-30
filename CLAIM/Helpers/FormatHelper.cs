@@ -1,9 +1,12 @@
 ﻿using CLAIM.Models.Shared;
+using CLAIM.Models.Decease;
 using System;
 using System.Globalization;
 using System.Text;
+using CLAIM.Ressources.FormTexts;
 
-namespace CLAIM.VIMWPNP2.Helpers
+
+namespace CLAIM.Helpers
 {
     public class FormatHelper
     {

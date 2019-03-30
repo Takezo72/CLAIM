@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,6 +10,18 @@
     <RootNamespace>CLAIM</RootNamespace>
     <AssemblyName>CLAIM</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +40,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -84,20 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
-    <Folder Include="Views\AcceleratedBenefit\" />
-    <Folder Include="Views\AcceleratedBenefit\DisplayTemplates\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Models\Shared\" />
-    <Folder Include="Models\Decease\" />
-    <Folder Include="Models\AcceleratedBenefit \" />
-    <Folder Include="Models\BankInformation \" />
-    <Folder Include="Models\CriticalIllness\" />
-    <Folder Include="Models\FileReview\" />
-    <Folder Include="Helpers\Configuration\" />
-    <Folder Include="Helpers\XmlGenerators\" />
-    <Folder Include="Ressources\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -181,10 +183,72 @@
     <Compile Include="Helpers\XmlGenerators\InsuredClaimXmlGenerator.cs" />
     <Compile Include="Helpers\XmlGenerators\UnsolicitedXmlGenerator.cs" />
     <Compile Include="Helpers\XmlGenerators\XmlHelper.cs" />
-    <Compile Include="Ressources\ErrorMessages.Designer.cs">
-      <DependentUpon>ErrorMessages.en</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\Configuration\ConfigurationHelper.cs" />
+    <Compile Include="Ressources\FormTexts\ErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\ErrorMessages.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UI.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UIAccident.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIAccident.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UIAddress.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIAddress.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UIAdvisor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIAdvisor.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UIFileUpload.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIFileUpload.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UIMedicalConsultation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIMedicalConsultation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UINeedHelp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UINeedHelp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UIPhysician.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIPhysician.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UISessionTimeout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UISessionTimeout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UIUnsolicited.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIUnsolicited.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressources\FormTexts\UI_Representative.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UI_Representative.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -205,11 +269,75 @@
     <Content Include="_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Ressources\ErrorMessages.en">
+    <EmbeddedResource Include="Ressources\FormTexts\ErrorMessages.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\ErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UI.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UI.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UI.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UIAccident.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIAccident.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIAccident.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UIAddress.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIAddress.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIAddress.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UIAdvisor.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIAdvisor.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIAdvisor.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UIFileUpload.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIFileUpload.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIFileUpload.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UIMedicalConsultation.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIMedicalConsultation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIMedicalConsultation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UINeedHelp.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UINeedHelp.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UINeedHelp.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UIPhysician.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIPhysician.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIPhysician.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UISessionTimeout.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UISessionTimeout.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UISessionTimeout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UISlider.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIUnsolicited.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UIUnsolicited.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIUnsolicited.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\FormTexts\UI_Representative.en.resx" />
+    <EmbeddedResource Include="Ressources\FormTexts\UI_Representative.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UI_Representative.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
@@ -217,5 +345,23 @@
         <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56562/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
 </Project>

@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Description_AcceleratedAmount" xml:space="preserve">
+    <value>Un montant allant jusqu'à 50% du montant d'assurance, sans dépasser 100 000$ peut être demandé. Si une prestation anticipée a déjà été versée, elle déterminera le montant actuellement disponible.</value>
+    <comment>PA IU35.2</comment>
+  </data>
+  <data name="Description_AcceleratedForm" xml:space="preserve">
+    <value>Ce formulaire permet de faire une réclamation en ligne pour obtenir une avance sur le versement du montant d’assurance prévu au décès. Prévoyez environ 10 minutes pour le compléter. Un premier suivi vous sera fait au plus tard 5 jours ouvrables après l’envoi de la réclamation.</value>
+    <comment>PA IU02.1</comment>
+  </data>
+  <data name="Description_CriticalIllnessForm" xml:space="preserve">
+    <value>Ce formulaire permet de faire une réclamation d’assurance maladie grave en ligne. Prévoyez environ 20  minutes pour le compléter. Un premier suivi sera fait au propriétaire de la police d’assurance au plus tard 5 jours ouvrables après l’envoi de la réclamation.</value>
+    <comment>CI IU02.1</comment>
+  </data>
+  <data name="Family_AddHealthProblem" xml:space="preserve">
+    <value>Ajouter un problème de santé</value>
+  </data>
+  <data name="Family_HealthProblemType" xml:space="preserve">
+    <value>Type de problème de santé</value>
+  </data>
+  <data name="Family_HealthProblemYear" xml:space="preserve">
+    <value>Année</value>
+  </data>
+  <data name="Family_LabelParent" xml:space="preserve">
+    <value>Père ou mère</value>
+  </data>
+  <data name="Family_LabelSibling" xml:space="preserve">
+    <value>Frère ou sœur</value>
+  </data>
+  <data name="Family_Relationship" xml:space="preserve">
+    <value>Lien de parenté</value>
+  </data>
+  <data name="Family_ValueParent" xml:space="preserve">
+    <value>DadMom</value>
+  </data>
+  <data name="Family_ValueSibling" xml:space="preserve">
+    <value>BrotherSister</value>
+  </data>
+  <data name="Header_AboutIllness" xml:space="preserve">
+    <value>À propos de votre maladie</value>
+    <comment>CI IU34</comment>
+  </data>
+  <data name="Header_AboutInsured" xml:space="preserve">
+    <value>À propos de vous</value>
+    <comment>IU31</comment>
+  </data>
+  <data name="Header_Address" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>IU33</comment>
+  </data>
+  <data name="Header_BenefitAmount" xml:space="preserve">
+    <value>Montant de la prestation de décès anticipée demandé</value>
+    <comment>PA IU35.1</comment>
+  </data>
+  <data name="Header_BenefitsRecipient" xml:space="preserve">
+    <value>À qui devons-nous transmettre la prestation ?</value>
+    <comment>IU23.3</comment>
+  </data>
+  <data name="Header_Confirmation" xml:space="preserve">
+    <value>Sommaire</value>
+    <comment>IU36.3</comment>
+  </data>
+  <data name="Header_Confirmation_AcceleratedBenefit" xml:space="preserve">
+    <value>Réclamation prestation de décès anticipée - Déclaration du demandeur</value>
+    <comment>IU36.3</comment>
+  </data>
+  <data name="Header_Confirmation_CriticalIllness" xml:space="preserve">
+    <value>Réclamation maladie grave - Déclaration du demandeur</value>
+    <comment>IU36.3</comment>
+  </data>
+  <data name="Header_DateOfBirth" xml:space="preserve">
+    <value>Date de naissance</value>
+    <comment>IU32</comment>
+  </data>
+  <data name="Header_Declaration" xml:space="preserve">
+    <value>Déclaration</value>
+    <comment>IU36.2</comment>
+  </data>
+  <data name="Header_DiseaseNature" xml:space="preserve">
+    <value>Nature de la maladie / Diagnostic du médecin</value>
+    <comment>CI IU34.9</comment>
+  </data>
+  <data name="Header_FamilyMembers" xml:space="preserve">
+    <value>Membres de la famille</value>
+    <comment>CI IU34.23</comment>
+  </data>
+  <data name="Header_FamilySimilarIllness" xml:space="preserve">
+    <value>Un membre de votre famille immédiate (père, mère, frère ou sœur) a-t-il déjà souffert d’un problème de santé similaire?</value>
+  </data>
+  <data name="Header_FilingClaimAs" xml:space="preserve">
+    <value>À quel titre effectuez-vous cette réclamation ?</value>
+    <comment>IU21</comment>
+  </data>
+  <data name="Header_FilingForSelf" xml:space="preserve">
+    <value>Effectuez-vous cette demande pour vous-même?</value>
+    <comment>IU19</comment>
+  </data>
+  <data name="Header_FirstConsultationDate" xml:space="preserve">
+    <value>Date de la première consultation avec un médecin au sujet de la maladie</value>
+    <comment>CI IU34.3</comment>
+  </data>
+  <data name="Header_FirstSymptomsDate" xml:space="preserve">
+    <value>Date de l’apparition des premiers symptômes de la maladie</value>
+    <comment>CI IU34.1</comment>
+  </data>
+  <data name="Header_IllnessSymptoms" xml:space="preserve">
+    <value>Décrire tous les symptômes ressentis</value>
+    <comment>CI IU34.2</comment>
+  </data>
+  <data name="Header_InsuranceAdvisor" xml:space="preserve">
+    <value>Êtes-vous un conseiller en assurance de personnes ?</value>
+    <comment>IU23.1</comment>
+  </data>
+  <data name="Header_InsurancePolicy" xml:space="preserve">
+    <value>La police d’assurance</value>
+    <comment>IU12</comment>
+  </data>
+  <data name="Header_InsurancePolicyNumber" xml:space="preserve">
+    <value>Numéro de police d’assurance  (10 chiffres)</value>
+    <comment>IU14</comment>
+  </data>
+  <data name="Header_PhysicianDiagnosis" xml:space="preserve">
+    <value>Diagnostic du médecin</value>
+    <comment>PA IU37</comment>
+  </data>
+  <data name="Header_ProvidingOrFamilyPhysician" xml:space="preserve">
+    <value>Médecin ayant assuré le suivi médical et médecin de famille (s’il y a lieu)</value>
+    <comment>CI IU34.4</comment>
+  </data>
+  <data name="Header_ProvidingPhysician" xml:space="preserve">
+    <value>Médecin ayant assuré le suivi médical</value>
+    <comment>PA IU38</comment>
+  </data>
+  <data name="Header_YourClaim" xml:space="preserve">
+    <value>Votre réclamation</value>
+    <comment>IU10</comment>
+  </data>
+  <data name="Header_YouWillNeed" xml:space="preserve">
+    <value>Vous aurez besoin…</value>
+    <comment>IU11</comment>
+  </data>
+  <data name="Info_RequireFamilySimilarProblems" xml:space="preserve">
+    <value>des informations à propos d’un problème de santé similaire des membres de la famille.</value>
+    <comment>CI IU11.2</comment>
+  </data>
+  <data name="Info_RequireInsurancePolicyNumber" xml:space="preserve">
+    <value>du numéro de police d’assurance. &lt;strong&gt;Consultez d’abord cette police pour savoir si la maladie diagnostiquée donne droit à une prestation.&lt;/strong&gt;</value>
+    <comment>CI IU11.1
+Utiliser HTML.Raw</comment>
+  </data>
+  <data name="Note_ClaimAcknowledgement" xml:space="preserve">
+    <value>* Un accusé de réception vous sera transmis après l’envoi de la réclamation.</value>
+    <comment>IU20.6</comment>
+  </data>
+  <data name="Period_From" xml:space="preserve">
+    <value>Du</value>
+    <comment>CI IU34.37</comment>
+  </data>
+  <data name="Period_To" xml:space="preserve">
+    <value>au</value>
+    <comment>CI IU34.37</comment>
+  </data>
+  <data name="Test_AsInsurancePolicyOwner" xml:space="preserve">
+    <value>Je suis le propriétaire de la police d’assurance</value>
+    <comment>IU22</comment>
+  </data>
+  <data name="Text_AddInsurancePolicy" xml:space="preserve">
+    <value>Ajouter un numéro de police d’assurance</value>
+    <comment>IU17</comment>
+  </data>
+  <data name="Text_CareDuration" xml:space="preserve">
+    <value>Période(s)</value>
+    <comment>CI IU34.35</comment>
+  </data>
+  <data name="Text_Choice" xml:space="preserve">
+    <value>Choisir...</value>
+    <comment>IU03</comment>
+  </data>
+  <data name="Text_City" xml:space="preserve">
+    <value>Ville</value>
+    <comment>PA IU38.4</comment>
+  </data>
+  <data name="Text_ClaimReception" xml:space="preserve">
+    <value>Nous avons reçu votre réclamation</value>
+    <comment>IU37.2</comment>
+  </data>
+  <data name="Text_ClaimReception_DMGPA" xml:space="preserve">
+    <value>Nous avons reçu la réclamation</value>
+    <comment>IU37.2</comment>
+  </data>
+  <data name="Text_ConsultationReason" xml:space="preserve">
+    <value>Raison de la consultation</value>
+    <comment>CI IU34.34</comment>
+  </data>
+  <data name="Text_ContactUsPhone" xml:space="preserve">
+    <value>Vous souhaitez faire la réclamation par téléphone ? Composez le &lt;a href="tel:{0}"&gt;{0}&lt;/a&gt;.</value>
+    <comment>IU02.2
+Utiliser HTML.Raw</comment>
+  </data>
+  <data name="Text_Declaration" xml:space="preserve">
+    <value>Je déclare que les renseignements fournis dans cette réclamation sont exacts et que toute déclaration faite au cours d’un entretien en personne ou par téléphone concernant la présente réclamation sera exacte et complète. Je consens à ce que toutes ces déclarations forment la base de toute prestation approuvée pour cette réclamation.</value>
+    <comment>IU36.1</comment>
+  </data>
+  <data name="Text_HealthcareFacility" xml:space="preserve">
+    <value>Établissement de santé</value>
+    <comment>PA IU38.3</comment>
+  </data>
+  <data name="Text_InsuranceAdvisor" xml:space="preserve">
+    <value>Au conseiller en assurance de personnes</value>
+    <comment>IU23.5</comment>
+  </data>
+  <data name="Text_InsurancePolicyInsured" xml:space="preserve">
+    <value>À l'assuré</value>
+  </data>
+  <data name="Text_InsurancePolicyNumber" xml:space="preserve">
+    <value>Nos numéros de police d’assurance ont 10 chiffres. Si celui de l’assuré a un format différent, communiquez avec le service à la clientèle au &lt;a href="tel:1 844 442-4636"&gt;1 844 442-4636&lt;/a&gt;.</value>
+    <comment>IU15
+Utiliser HTML.Raw</comment>
+  </data>
+  <data name="Text_InsurancePolicyOwner" xml:space="preserve">
+    <value>Au propriétaire de la police d’assurance</value>
+    <comment>IU23.4</comment>
+  </data>
+  <data name="Text_InsuredFirstName" xml:space="preserve">
+    <value>Prénom de l’assuré</value>
+    <comment>IU20.1</comment>
+  </data>
+  <data name="Text_InsuredLastName" xml:space="preserve">
+    <value>Nom de l'assuré</value>
+    <comment>IU20.2</comment>
+  </data>
+  <data name="Text_MultipleInsurancePolicies" xml:space="preserve">
+    <value>Si la réclamation concerne plus d’une police d’assurance, inscrivez tous les numéros de police.</value>
+    <comment>IU13</comment>
+  </data>
+  <data name="Text_NotAsInsurancePolicyOwner" xml:space="preserve">
+    <value>Je ne suis pas le propriétaire de la police d’assurance</value>
+    <comment>IU23</comment>
+  </data>
+  <data name="Text_PhysicianConsulted" xml:space="preserve">
+    <value>Médecin consulté</value>
+    <comment>CI IU34.36</comment>
+  </data>
+  <data name="Text_PhysicianDiagnosis" xml:space="preserve">
+    <value>Indiquez le diagnostic du médecin</value>
+    <comment>PA IU37.1</comment>
+  </data>
+  <data name="Text_PhysicianFirstName" xml:space="preserve">
+    <value>Prénom du nouveau médecin</value>
+    <comment>PA IU38.1</comment>
+  </data>
+  <data name="Text_PhysicianLastName" xml:space="preserve">
+    <value>Nom</value>
+    <comment>PA IU38.2</comment>
+  </data>
+  <data name="Text_TrackingEmailSent" xml:space="preserve">
+    <value>Un numéro de suivi et des informations sur son utilité vous seront transmis par courriel dans quelques minutes. Les prochaines étapes vous seront confirmées au plus tard dans 5 jours ouvrables.&lt;br&gt;&lt;br&gt;Bonne journée,</value>
+  </data>
+  <data name="Text_TrackingEmailSent_DECES" xml:space="preserve">
+    <value>Un numéro de suivi et des indications qui vous permettront de suivre l’évolution de la réclamation en ligne vous seront transmis par courriel dans quelques minutes. Les prochaines étapes vous seront confirmées au plus tard dans 5 jours ouvrables.</value>
+  </data>
+  <data name="Text_TrackingEmailSent_MGPA" xml:space="preserve">
+    <value>Un numéro de suivi et des indications qui vous permettront de suivre l’évolution de la réclamation en ligne vous seront transmis par courriel dans quelques minutes. Les prochaines étapes vous seront confirmées au plus tard dans 5 jours ouvrables.</value>
+  </data>
+  <data name="Text_YourEmail" xml:space="preserve">
+    <value>Votre courriel</value>
+    <comment>IU20.5</comment>
+  </data>
+  <data name="Text_YourFirstName" xml:space="preserve">
+    <value>Votre prénom</value>
+    <comment>IU20.3</comment>
+  </data>
+  <data name="Text_YourLastName" xml:space="preserve">
+    <value>Votre nom</value>
+    <comment>IU20.4</comment>
+  </data>
+  <data name="Title_AboutBenefit" xml:space="preserve">
+    <value>À propos de la prestation de décès anticipée</value>
+    <comment>PA IU34</comment>
+  </data>
+  <data name="Title_FileClaim" xml:space="preserve">
+    <value>Faire une réclamation</value>
+    <comment>IU01</comment>
+  </data>
+</root>
