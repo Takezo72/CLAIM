@@ -1,0 +1,58 @@
+﻿@using System.Globalization
+@using IAFG.IA.WE.Mvc.Html
+@using CLAIM.Helpers
+@using CLAIM.Ressources.FormTexts
+@model CLAIM.Models.AcceleratedBenefit.AboutBenefitModel
+
+@{
+    ViewBag.Title = "About the accelerated benefits";
+    Layout = "~/Views/Shared/_ExtranetLayout.cshtml";
+    var resources = new ResourcesFormTextsHelper((bool)TempData["IsInsured"], CultureInfo.CurrentCulture);
+}
+
+<script language="javascript">we_ProgressBarInit(3, 5);</script>
+
+<script type="text/javascript" src="@Html.BuildImageServerSrc("vi/vimwpnp2/Scripts/Physicians.js", "~/Scripts/Physicians.js")"></script>
+<script type="text/javascript" src="@Html.BuildImageServerSrc("vi/vimwpnp2/Scripts/MoneyField.js", "~/Scripts/MoneyField.js")"></script>
+
+<div class="we_form" style="margin: 20px">
+    <form action="@Url.Action("AboutBenefit")" method="post" id="aboutBenefitForm" class="we_form" style="margin: 20px">
+        <div>
+            <h1><strong>@UI.Title_AboutBenefit</strong></h1>
+            <div class="gridLayout">
+                <div class="row">
+                    <h3>
+                        @UI.Header_BenefitAmount
+                        <a class="we_helpLink we_modal" id="lnkInfoBeneficiaire" href="#" data-selector="#divPopupAide2" data-title="Information"></a>
+                    </h3>
+                    <div id="divPopupAide2" hidden="hidden">
+                        @UI.Description_AcceleratedAmount
+                    </div>
+                    <div class="columns small-4">
+                        @Html.EditorFor(m => m.RequestedAmount)
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>@UI.Header_PhysicianDiagnosis</h3>
+                    <div class="columns small-12">
+                        @UI.Text_PhysicianDiagnosis
+                        @Html.TextAreaFor(m => m.Diagnosis, new { style = "width: 100%; height: 100px; resize: none;", maxlength = 3500 })
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>@UI.Header_ProvidingPhysician</h3>
+                    @Html.EditorFor(m => m.PhysicianInfo)
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/_ButtonList.cshtml", Model.NavigationButtons, Html.ViewData)
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#RequestedAmount").attr('maxlength', '6');
+        $("#RequestedAmount").css('text-align', '@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpper() != "FR" ? "left" : "right" )');
+    });
+</script>

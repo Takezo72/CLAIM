@@ -1,0 +1,121 @@
+﻿@using CLAIM.Ressources.FormTexts
+@using CLAIM.Helpers
+@using CLAIM.Helpers.Configuration
+@using IAFG.IA.WE.Mvc.Html
+@model CLAIM.Models.Shared.ClaimInitialization
+
+@{
+    ViewBag.Title = "Initialize a claim";
+    Layout = "~/Views/Shared/_ExtranetLayout.cshtml";
+    ConfigurationHelper config = new ConfigurationHelper();
+}
+<script type="text/javascript" src="@Html.BuildImageServerSrc("vi/vimwpnp2/Scripts/Shared/Initialize.js", "~/Scripts/Shared/Initialize.js")"></script>
+<script type="text/javascript" src="@Html.BuildImageServerSrc("vi/vimwpnp2/Scripts/InsurancePolicies.js", "~/Scripts/InsurancePolicies.js")"></script>
+
+<div class="we_form" style="margin: 20px">
+    <form action="@Url.Action("InitializeAccelerated")" method="post" id="initializeForm" class="we_form" style="margin: 20px">
+        <div>
+            <h1><strong>@UI.Title_FileClaim</strong></h1>
+            <p>@UI.Description_AcceleratedForm</p>
+            <p>@Html.Raw(string.Format(UI.Text_ContactUsPhone, config.HelpTelephone))</p>
+            <h2>@UI.Header_YourClaim</h2>
+
+            <div>
+                <h3>@UI.Header_FilingForSelf</h3>
+                <div class="optionHL">
+                    @Html.RadioButtonFor(m => m.UserIsInsured, "true", new { id = "rdoIsInsured" })
+                    @Resources.Global.ReponseOui
+                </div>
+                <div class="optionHL">
+                    @Html.RadioButtonFor(m => m.UserIsInsured, "false", new { id = "rdoIsInsured" })
+                    @Resources.Global.ReponseNon
+                </div>
+                @Html.ValidationMessageFor(m => m.IsInsured, ErrorMessages.Error_ChoiceRequired, new { @class = "text error" })
+            </div>
+            <div id="divInsured" class="gridLayout subDiv" style="display: none">
+                <div class="row">
+                    <div class="columns medium-6">
+                        <label>@UI.Text_InsuredFirstName</label>
+                        @Html.TextBoxFor(m => m.InsuredFirstName, new { @class = "span12", maxlength = "50" })
+                        @Html.ValidationMessageFor(m => m.InsuredFirstName, ErrorMessages.Error_InsuredFirstName, new { @class = "text error" })
+                    </div>
+                    <div class="columns medium-6">
+                        <label>@UI.Text_InsuredLastName</label>
+                        @Html.TextBoxFor(m => m.InsuredLastName, new { @class = "span12", maxlength = "50" })
+                        @Html.ValidationMessageFor(m => m.InsuredLastName, ErrorMessages.Error_InsuredLastName, new { @class = "text error" })
+                    </div>
+                </div>
+            </div>
+            <div id="divClaimer" class="gridLayout subDiv" style="display: none">
+                <div class="row">
+                    <div class="columns medium-6">
+                        <label>@UI.Text_YourFirstName</label>
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "span12", maxlength = "50" })
+                        @Html.ValidationMessageFor(m => m.FirstName, ErrorMessages.Error_FirstName, new { @class = "text error" })
+                    </div>
+                    <div class="columns medium-6">
+                        <label>@UI.Text_YourLastName</label>
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "span12", maxlength = "50" })
+                        @Html.ValidationMessageFor(m => m.LastName, ErrorMessages.Error_LastName, new { @class = "text error" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns medium-6">
+                        <label>@UI.Text_YourEmail</label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "span12", regex = @"^[\w-\.]+\@([\da-zA-Z-]+\.)+[\da-zA-Z-]{2,4}$", useregex = "True" })
+                        @Html.ValidationMessageFor(m => m.Email, ErrorMessages.Invalid_Email, new { @class = "text error" })
+                        <h6 style="margin: 1em 0 0 0;">@UI.Note_ClaimAcknowledgement</h6>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>@UI.Header_FilingClaimAs</h3>
+                <div class="optionHL">
+                    @Html.RadioButtonFor(m => m.IsInsurancePolicyOwner, "O", new { id = "rdoIsInsurancePolicyOwner" })
+                    @UI.Test_AsInsurancePolicyOwner
+                </div>
+                <div class="optionHL">
+                    @Html.RadioButtonFor(m => m.IsInsurancePolicyOwner, "N", new { id = "rdoIsInsurancePolicyOwner" })
+                    @UI.Text_NotAsInsurancePolicyOwner
+                </div>
+                @Html.ValidationMessageFor(m => m.IsInsurancePolicyOwner, ErrorMessages.Error_ChoiceRequired, new { @class = "text error" })
+                <div id="divIsAgent" class="subDiv" style="display: none">
+                    <h3>@UI.Header_InsuranceAdvisor</h3>
+                    <div class="optionHL">
+                        @Html.RadioButtonFor(m => m.IsAgent, "O", new { id = "rdoIsAgent" })
+                        @Resources.Global.ReponseOui
+                    </div>
+                    <div class="optionHL">
+                        @Html.RadioButtonFor(m => m.IsAgent, "N", new { id = "rdoIsAgent" })
+                        @Resources.Global.ReponseNon
+                    </div>
+                    @Html.ValidationMessageFor(m => m.IsAgent, ErrorMessages.Error_ChoiceRequired, new { @class = "text error" })
+                    <div id="divAgentInfos" class="subDiv" style="display: none">
+                        @Html.EditorFor(m => m.Advisor)
+                        <h3>@UI.Header_BenefitsRecipient</h3>
+                        <div class="optionHL">
+                            @Html.RadioButtonFor(m => m.SendInsuranceBenefitsTo, "Owner", new { id = "rdoIsAgent" })
+                            @UI.Text_InsurancePolicyOwner
+                        </div>
+                        <div class="optionHL">
+                            @Html.RadioButtonFor(m => m.SendInsuranceBenefitsTo, "Agent", new { id = "rdoIsAgent" })
+                            @UI.Text_InsuranceAdvisor
+                        </div>
+                        <div class="optionHL">
+                            @Html.RadioButtonFor(m => m.SendInsuranceBenefitsTo, "Insured", new { id = "rdoIsAgent" })
+                            @UI.Text_InsurancePolicyInsured
+                        </div>
+                        @Html.ValidationMessageFor(m => m.SendInsuranceBenefitsTo, ErrorMessages.Error_ChoiceRequired, new { @class = "text error" })
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/_InsurancePolicies.cshtml",
+                                         Model.InsurancePolicies,
+                                         new ViewDataDictionary(Html.ViewData) { TemplateInfo = new TemplateInfo { HtmlFieldPrefix = "InsurancePolicies" } })
+        </div>
+
+        @Html.Partial("~/Views/Shared/_ButtonList.cshtml", Model.NavigationButtons, Html.ViewData)
+    </form>
+</div>
+

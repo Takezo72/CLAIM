@@ -1,0 +1,47 @@
+﻿@using System.Globalization
+@using IAFG.IA.VI.VIMWPNP2.Helpers
+@using IAFG.IA.VI.VIMWPNP2.Ressources.FormTexts
+@model IAFG.IA.VI.VIMWPNP2.Models.AcceleratedBenefit.AboutBenefitModel
+
+@{
+    var resources = new ResourcesFormTextsHelper((bool)ViewData["IsInsured"], CultureInfo.CurrentCulture);
+}
+
+<div class="we_form">
+    <div class="caption">
+        <h2>
+            @UI.Title_AboutBenefit
+
+            @if (!(bool)ViewData["IsTransmitted"])
+            {
+                <span style="margin-left: 1em;">@Html.ActionLink(Resources.InsuredClaim.BoutonModifier, "AboutBenefit", "AcceleratedBenefit", null, new { @class = "btn" })</span>
+            }
+        </h2>
+        <div class="gridLayout">
+            <div class="row">
+                <div class="columns small-8">
+                    <h3>@UI.Header_BenefitAmount</h3>
+                </div>
+                <div class="columns small-4">
+                    <p>@Model.RequestedAmount.ToFormattedString()</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns small-8">
+                    <h3>@UI.Header_PhysicianDiagnosis</h3>
+                </div>
+                <div class="columns small-4">
+                    <p>@Model.Diagnosis</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns small-8">
+                    <h3>@UI.Header_ProvidingPhysician</h3>
+                </div>
+                <div class="columns small-4">
+                    <p>@Html.DisplayFor(m => m.PhysicianInfo)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
