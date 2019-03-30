@@ -1,4 +1,4 @@
-﻿namespace IAFG.IA.VI.VIMWPNP2.Models.Shared
+﻿namespace CLAIM.Models.Shared
 {
     public interface IViewModel
     {

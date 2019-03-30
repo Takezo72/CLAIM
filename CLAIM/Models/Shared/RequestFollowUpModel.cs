@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IAFG.IA.VI.VIMWPNP2.Models.Shared
+namespace CLAIM.Models.Shared
 {
     [Serializable]
     public class RequestFollowUpModel

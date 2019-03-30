@@ -5,7 +5,7 @@ using System.Linq;
 using System.Resources;
 using System.Web;
 
-namespace IAFG.IA.VI.VIMWPNP2.Models.Shared
+namespace CLAIM.Models.Shared
 {
     [Serializable]
     public class SliderModel : IValidatableSubModel

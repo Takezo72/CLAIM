@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Resources;
 
-namespace IAFG.IA.VI.VIMWPNP2.Models.Shared
+namespace CLAIM.Models.Shared
 {
     [Serializable]
     public class SliderBracket

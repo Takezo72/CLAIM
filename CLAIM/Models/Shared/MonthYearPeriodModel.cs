@@ -1,4 +1,4 @@
-﻿using IAFG.IA.VI.VIMWPNP2.Helpers.XmlGenerators;
+﻿using CLAIM.Helpers.XmlGenerators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 
-namespace IAFG.IA.VI.VIMWPNP2.Models.Shared
+namespace CLAIM.Models.Shared
 {
     [Serializable]
     public class MonthYearPeriodModel : IValidatableSubModel

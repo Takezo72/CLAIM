@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Xml;
-using IAFG.IA.VI.VIMWPNP2.Helpers.XmlGenerators;
+using CLAIM.Helpers.XmlGenerators;
 
-namespace IAFG.IA.VI.VIMWPNP2.Models.Shared
+namespace CLAIM.Models.Shared
 {
     [Serializable]
     public class PhysicianModel : IValidatableSubModel

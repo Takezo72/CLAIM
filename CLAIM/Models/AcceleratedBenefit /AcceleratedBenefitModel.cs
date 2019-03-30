@@ -2,6 +2,7 @@
 using CLAIM.Models.Shared;
 using System;
 using CLAIM.Helpers.Configuration;
+using CLAIM.Helpers.XmlGenerators;
 
 namespace CLAIM.Models.AcceleratedBenefit
 {

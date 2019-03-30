@@ -1,9 +1,7 @@
 ﻿using CLAIM.Models.Shared;
-using CLAIM.Decease;
 using System;
 using System.Globalization;
 using System.Text;
-using CLAIM.Ressources.FormTexts;
 
 namespace CLAIM.VIMWPNP2.Helpers
 {
@@ -37,7 +35,7 @@ namespace CLAIM.VIMWPNP2.Helpers
             return dateFormated;
         }
 
-        public static string FormatPhysician(PhysicianModel model)
+        public static string FormatPhysician(SpecialistPhysician model)
         {
             var sb = new StringBuilder();
 
@@ -51,7 +49,7 @@ namespace CLAIM.VIMWPNP2.Helpers
             return sb.ToString();
         }
 
-        public static string FormatPhysician(SpecialistPhysicianModel model)
+        public static string FormatPhysician(Specialist model)
         {
             var sb = new StringBuilder();
 
