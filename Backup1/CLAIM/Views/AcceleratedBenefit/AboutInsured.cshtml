@@ -1,0 +1,41 @@
+﻿@using IAFG.IA.WE.Mvc.Html
+@using System.Globalization
+@using CLAIM.Helpers
+@using CLAIM.Ressources.FormTexts
+
+@model CLAIM.Models.Shared.AcceleratedBenefitInsured
+
+@{
+    ViewBag.Title = "About the insured";
+    Layout = "~/Views/Shared/_ExtranetLayout.cshtml";
+    var resources = new ResourcesFormTextsHelper((bool)TempData["IsInsured"], CultureInfo.CurrentCulture);
+}
+
+<script language="javascript">we_ProgressBarInit(2, 5);</script>
+
+<script type="text/javascript" src="@Html.BuildImageServerSrc("vi/vimwpnp2/Scripts/Address_v4.js", "~/Scripts/Address_v4.js")"></script>
+
+<div class="we_form" style="margin: 20px">
+    <form action="@Url.Action("AboutInsured")" method="post" class="we_form" style="margin: 20px">
+        <div>
+            <h1><strong>@string.Format(resources.GetString("Header_AboutInsured").ToString(), TempData["InsuredFirstName"] ?? string.Empty)</strong></h1>
+            <div class="gridLayout">
+                <div class="row">
+                    <h3>@UI.Header_DateOfBirth</h3>
+                    <div class="columns medium-6">
+                        @Html.EditorFor(m => m.BirthDate)
+                    </div>
+                    <div class="columns medium-6"></div>
+                </div>
+                <div class="row">
+                    <h3>@UI.Header_Address</h3>
+                    <div class="columns medium-12">
+                        @Html.EditorFor(m => m.Address)
+                    </div>
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/_ButtonList.cshtml", Model.NavigationButtons, Html.ViewData)
+    </form>
+</div>
+
